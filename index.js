@@ -26,8 +26,8 @@ function UpdateVarDisplay(variable, IsNumber)
     }
     else
     {
-        var text = variable.ToString();
+        var text = ToString(variable);
     }
 
-    document.getElementById(variable.ToString()).innerHTML = text;
+    document.getElementById(ToString(variable)).innerHTML = text;
 }

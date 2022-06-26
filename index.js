@@ -1,8 +1,4 @@
-window.onload = function(){
-    var ParticleAmount = 0;
-    var DisplayParticleAmount = "0.00"
-    document.getElementById('output').innerHTML = lengthOfName;
-};
+var ParticleAmount = 0;
 
 //Function definitions
 
@@ -17,5 +13,21 @@ function TickFunction()
     ParticleAmount += 1;
 
     //Update visuals
-    DisplayParticleAmount = parseFloat(ParticleAmount).toFixed(2);
+    UpdateVarDisplay(ParticleAmount, true);
+}
+
+function UpdateVarDisplay(variable, IsNumber)
+{
+    if(IsNumber)
+    {
+        var exponent = Math.floor(Math.log10(variable));
+        var value = parseFloat(Math.pow(variable, -exponent)).toFixed(2);
+        var text = value + "e" + exponent;
+    }
+    else
+    {
+        var text = variable.ToString();
+    }
+
+    document.getElementById(variable.ToString()).innerHTML = text;
 }

@@ -10,7 +10,7 @@ $(function()
 function TickFunction()
 {
     //Update math
-    ParticleAmount += 1;
+    ParticleAmount = ParticleAmount + 1;
 
     //Update visuals
     UpdateVarDisplay(ParticleAmount, true);

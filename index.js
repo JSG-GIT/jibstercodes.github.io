@@ -2,7 +2,7 @@ var ParticleAmount = 0;
 
 //Function definitions
 
-$(function()
+$(document).ready(function()
 {
     setInterval(TickFunction, 20);
 });
@@ -29,5 +29,5 @@ function UpdateVarDisplay(variable, IsNumber)
         var text = variable.toString();
     }
 
-    document.getElementById(variable.toString()).innerHTML = text;
+    $("#" + variable.toString()).text = text;
 }

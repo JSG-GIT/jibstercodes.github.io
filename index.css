@@ -1,5 +1,6 @@
 body{
     background-color: lightblue;
+    -ms-flex-align: center;
 }
 
 h1{
@@ -12,9 +13,4 @@ p{
     font-family: 'Courier New', Courier, monospace;
     color: black;
     text-align: center;
-}
-
-iframe{
-    vertical-align: center;
-    align-content: center;
 }

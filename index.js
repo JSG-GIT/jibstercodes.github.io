@@ -18,7 +18,10 @@ function TickFunction()
     NewText = ToText(ParticleAmount)
     UpdateVarDisplay("ParticleAmount", NewText);
 
-    if(ParticleAmount > 10 && show == 0){show = 1; $("#video").show(); $("#video").play()}
+    if(ParticleAmount > 10 && show == 0){
+        show = 1; $("#video").show();
+        $('#video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+    }
 }
 
 function ToText(variable)
@@ -37,4 +40,9 @@ function UpdateVarDisplay(id, text)
 {
     $("#" + id).text(text);
     console.log("#" + id)
+}
+
+function PlayVideo(){
+        // Creates arbitrary global 'player' variable to be defined later
+
 }

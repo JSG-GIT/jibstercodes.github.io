@@ -45,4 +45,4 @@ function UpdateVarDisplay(id, text)
 function PlayVideo(){
         // Creates arbitrary global 'player' variable to be defined later
 
-}
+} 

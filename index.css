@@ -3,13 +3,18 @@ body{
 }
 
 h1{
-    font-family: verdana;
+    font-family: 'Courier New', Courier, monospace;
     color: black;
     text-align: center;
 }
 
 p{
-    font-family: verdana;
+    font-family: 'Courier New', Courier, monospace;
     color: black;
     text-align: center;
+}
+
+iframe{
+    vertical-align: center;
+    align-content: center;
 }

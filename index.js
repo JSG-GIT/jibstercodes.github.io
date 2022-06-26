@@ -14,6 +14,7 @@ function TickFunction()
 
     //Update visuals
     UpdateVarDisplay(ParticleAmount, true);
+    $("#ParticleAmount").text = "LOL";
 }
 
 function UpdateVarDisplay(variable, IsNumber)

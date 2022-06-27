@@ -1,40 +1,27 @@
 var ParticleAmount = 0;
-var fps = 50;
 var paused = false;
 
 $(document).ready(function() {
-    ParticleAmount = 0;
-    fps = 50;
-    paused = false;
-    window.setInterval(TickFunction, 1000)
-    window.setInterval(ActiveTickFunction, 1000/fps);
+    window.requestAnimationFrame(ActiveTickFunction);
 });
 
-//Focused TickFunction
-function ActiveTickFunction(){
-    if(paused === false){
-        //Math
-        UpdateMath();
+//Active Tick Function
+var oldstamp = 0;
+var ms;
+function ActiveTickFunction(timestamp){
+    if(paused){window.requestAnimationFrame(ActiveTickFunction); return;}
+    ms = (timestamp - oldstamp)/1000;
 
-        //Display
-        NewText = ToText(ParticleAmount);
-        UpdateVarDisplay("ParticleAmount", NewText);
-    }
-}
+    //Math
+    UpdateMath(ms);
 
-//Unfocused TickFunction
-function TickFunction()
-{
-    if(paused === true){
-        //Math
-        for(i=0;i<fps;i++){
-            UpdateMath();
-        }
+    //Display
+    NewText = ToText(ParticleAmount);
+    UpdateVarDisplay("ParticleAmount", NewText);
 
-        //Display
-        NewText = ToText(ParticleAmount);
-        UpdateVarDisplay("ParticleAmount", NewText);
-    }
+    //Request next tick
+    oldstamp = timestamp
+    window.requestAnimationFrame(ActiveTickFunction);
 }
 
 //Updating stuff
@@ -42,10 +29,10 @@ function UpdateVarDisplay(id, text)
 {
     $("#" + id).text(text);
 }
-function UpdateMath()
+function UpdateMath(dt)
 {
     //Update math
-    ParticleAmount += 1/fps;
+    ParticleAmount += 1*dt;
 }
 
 //Turning variables to displayable text

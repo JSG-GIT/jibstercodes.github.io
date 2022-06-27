@@ -1,6 +1,5 @@
 var ParticleAmount = 0.00;
-var truefps = 60;
-var fps = truefps;
+var fps = 60;
 var show = 0;
 var paused = false;
 //Function definitions
@@ -13,7 +12,7 @@ $(document).ready(function()
 function TickFunction()
 {
     //Update the math
-    if(paused){for(i=0;i<truefps;i++){UpdateMath}}
+    if(paused){for(i=0;i<fps;i++){UpdateMath}}
     else{UpdateMath();}
 
     //Update visuals
@@ -67,15 +66,13 @@ function timerHandler() {
 
 // Start timer
 function pause() {
-    fps = 1
     paused = true;
-    setInterval(TickFunction, 1000/fps);
+    setInterval(TickFunction, 1000);
 }
 
 // Stop timer
 function play()
 {
     paused = false;
-    fps = truefps;
     setInterval(TickFunction, 1000/fps);
 }

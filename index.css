@@ -1,6 +1,9 @@
 body{
     background-color: lightblue;
-    -ms-flex-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    text-align: center;
+    font-weight: bold;
 }
 
 h1{
@@ -13,4 +16,44 @@ p{
     font-family: 'Courier New', Courier, monospace;
     color: black;
     text-align: center;
+}
+
+button{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.prodtable{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 20px;
+}
+
+.row1{
+    display: table-row;
+}
+
+.prodN{
+    width: 30%;
+}
+
+.prodP{
+    width: 40%;
+}
+
+.prodB{
+    width: 12%;
+}
+
+.prodBMax{
+    width: 18%;
+}
+
+.prodbtn{
+    height: 25px;
+    width: 150px;
+    font-size: 15px;
+    text-align: left;
 }

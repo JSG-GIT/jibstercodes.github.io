@@ -1,27 +1,23 @@
 var ParticleAmount = 0.00;
-var fps = 60;
+var truefps = 60;
+var fps = truefps;
 var show = 0;
 //Function definitions
 
 $(document).ready(function()
 {
     setInterval(TickFunction, 1000/fps);
-    $("#video").hide();
 });
 
 function TickFunction()
 {
-    //Update math
-    ParticleAmount += 1/fps;
+    //Update the math
+    UpdateMath();
 
     //Update visuals
-    NewText = ToText(ParticleAmount)
+    NewText = ToText(ParticleAmount);
     UpdateVarDisplay("ParticleAmount", NewText);
 
-    if(ParticleAmount > 10 && show == 0){
-        show = 1; $("#video").show();
-        $('#video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
-    }
 }
 
 function ToText(variable)
@@ -45,4 +41,37 @@ function UpdateVarDisplay(id, text)
 function PlayVideo(){
         // Creates arbitrary global 'player' variable to be defined later
 
+}
+
+function UpdateMath()
+{
+    //Update math
+    ParticleAmount += 1/fps;
+}
+
+//Offscreen Timer
+
+var myInterval;
+
+// Active
+window.addEventListener('focus', play);
+
+// Inactive
+window.addEventListener('blur', pause);
+
+function timerHandler() {
+    count++;
+}
+
+// Start timer
+function pause() {
+    fps = 1
+    setInterval(TickFunction, 1000/fps);
+}
+
+// Stop timer
+function play()
+{
+    fps = truefps;
+    setInterval(TickFunction, 1000/fps);
 }

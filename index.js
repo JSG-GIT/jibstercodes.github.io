@@ -1,10 +1,10 @@
 var ParticleAmount = 0;
-var fps = 60;
+var fps = 50;
 var paused = false;
 
 $(document).ready(function() {
     ParticleAmount = 0;
-    fps = 60;
+    fps = 50;
     paused = false;
     window.setInterval(TickFunction, 1000)
     window.setInterval(ActiveTickFunction, 1000/fps);

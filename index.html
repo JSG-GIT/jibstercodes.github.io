@@ -8,12 +8,12 @@
     </head>
 
     <body>
-        <p>Version: 0.0.1-beta</p>
+        <p>Version: 0.0.2-beta</p>
         <h1>Particles: <span id="Particle_N">0.00</span></h1>
 
         <div id="productiontab">
             <table id="producers" class="prodtable">
-                <tr id="row1">
+                <tr id="prodrow1">
                     <td id="Prod1_N" class="prodN">
                         First producer
                     </td>
@@ -28,7 +28,7 @@
                     </td>
                 </tr>
 
-                <tr id="row2">
+                <tr id="prodrow2">
                     <td id="Prod2_N" class="prodN">
                         Second producer
                     </td>
@@ -40,6 +40,48 @@
                     </td>
                     <td id="Prod2_BMax" class="prodBMax">
                         <button class = "prodbtn", id="2max">Buy max: 100</button>
+                    </td>
+                </tr>
+
+                <tr id="prodrow3">
+                    <td id="Prod3_N" class="prodN">
+                        Second producer
+                    </td>
+                    <td id="Prod3_P" class="prodP">
+                        Production: 0 First Producers
+                    </td>
+                    <td id="Prod3_B" class="prodB">
+                        <button class = "prodbtn", id="3">Buy 1: 100</button>
+                    </td>
+                    <td id="Prod3_BMax" class="prodBMax">
+                        <button class = "prodbtn", id="3max">Buy max: 100</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="upgrades">
+            <table id="prodUpgrades" class="upgradeTable">
+                <tr id="prodUrow1">
+                    <td id="Upg1name" class="UpgName">
+                        Better producers:
+                    </td>
+                    <td id="Upg1desc" class="UpgDesc">
+                        Changes the buff formula for producers from B^n to (1+n)^B.
+                    </td>
+                    <td id="Upg1btn" class="Upg">
+                        <button class="upgbtn" id="1">Buy: 500.00</button>
+                    </td>
+                </tr>
+                <tr id="prodUrow2">
+                    <td id="Upg2name" class="UpgName">
+                        Better producers 2:
+                    </td>
+                    <td id="Upg2desc" class="UpgDesc">
+                        Adds a 1+log10(N+1) multiplier based on total producers.
+                    </td>
+                    <td id="Upg2btn" class="Upg">
+                        <button class="upgbtn" id="2">Buy: 1.00e6</button>
                     </td>
                 </tr>
             </table>

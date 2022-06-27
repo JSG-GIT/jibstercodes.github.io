@@ -1,26 +1,54 @@
-var ParticleAmount = 0.00;
+var ParticleAmount = 0;
 var fps = 60;
-var show = 0;
 var paused = false;
-//Function definitions
 
-$(document).ready(function()
-{
-    setInterval(TickFunction, 1000/fps);
+$(document).ready(function() {
+    ParticleAmount = 0;
+    fps = 60;
+    paused = false;
+    window.setInterval(TickFunction, 1000)
+    window.setInterval(ActiveTickFunction, 1000/fps);
 });
 
-function TickFunction()
-{
-    //Update the math
-    if(paused){for(i=0;i<fps;i++){UpdateMath}}
-    else{UpdateMath();}
+//Focused TickFunction
+function ActiveTickFunction(){
+    if(paused === false){
+        //Math
+        UpdateMath();
 
-    //Update visuals
-    NewText = ToText(ParticleAmount);
-    UpdateVarDisplay("ParticleAmount", NewText);
-
+        //Display
+        NewText = ToText(ParticleAmount);
+        UpdateVarDisplay("ParticleAmount", NewText);
+    }
 }
 
+//Unfocused TickFunction
+function TickFunction()
+{
+    if(paused === true){
+        //Math
+        for(i=0;i<fps;i++){
+            UpdateMath();
+        }
+
+        //Display
+        NewText = ToText(ParticleAmount);
+        UpdateVarDisplay("ParticleAmount", NewText);
+    }
+}
+
+//Updating stuff
+function UpdateVarDisplay(id, text)
+{
+    $("#" + id).text(text);
+}
+function UpdateMath()
+{
+    //Update math
+    ParticleAmount += 1/fps;
+}
+
+//Turning variables to displayable text
 function ToText(variable)
 {
     if(typeof variable === "number")
@@ -33,46 +61,8 @@ function ToText(variable)
     return variable.toString();
 }
 
-function UpdateVarDisplay(id, text)
-{
-    $("#" + id).text(text);
-    console.log("#" + id)
-}
+window.addEventListener('focus', play)
+function play(){paused = false;}
+window.addEventListener('blur', pause)
+function pause(){paused = true;}
 
-function PlayVideo(){
-        // Creates arbitrary global 'player' variable to be defined later
-
-}
-
-function UpdateMath()
-{
-    //Update math
-    ParticleAmount += 1/fps;
-}
-
-//Offscreen Timer
-
-var myInterval;
-
-// Active
-window.addEventListener('focus', play);
-
-// Inactive
-window.addEventListener('blur', pause);
-
-function timerHandler() {
-    count++;
-}
-
-// Start timer
-function pause() {
-    paused = true;
-    setInterval(TickFunction, 1000);
-}
-
-// Stop timer
-function play()
-{
-    paused = false;
-    setInterval(TickFunction, 1000/fps);
-}

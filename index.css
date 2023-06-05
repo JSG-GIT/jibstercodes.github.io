@@ -29,8 +29,7 @@ div.gallery {
 }
 
 img {
-    border-width: 3px;
-    border-color: aqua;
+    border: 5px solid aqua;
     padding: 10px;
     width: auto;
     height: 300px;

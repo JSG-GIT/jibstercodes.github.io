@@ -25,9 +25,12 @@ div.gallery {
     width: 75%;
     height: auto;
     margin: auto;
+    text-align: center;
 }
 
 img {
+    border-width: 3px;
+    border-color: aqua;
     padding: 10px;
     width: auto;
     height: 300px;

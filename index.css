@@ -1,3 +1,7 @@
+body {
+    background-color:darkgray
+}
+
 p {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: medium;
@@ -24,7 +28,7 @@ h1 {
 
 img {
     padding: 10px;
-    max-width: 20%;
-    height: auto;
+    width: auto;
+    max-height: 40%;
     border-radius: 20px;
 }

@@ -19,5 +19,10 @@ h1 {
 #gallery {
     width: 75%;
     height: auto;
+}
+
+img {
+    max-width: 80%;
+    height: auto;
     border-radius: 20px;
 }

@@ -23,7 +23,10 @@ h1 {
 div.gallery {
     width: 75%;
     height: auto;
+    display: flex;
+    flex-wrap:nowrap;
     text-align: center;
+    justify-content:center
 }
 
 img {

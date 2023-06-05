@@ -29,9 +29,8 @@ div.gallery {
 }
 
 img {
-    border: 5px solid aqua;
-    padding: 10px;
+    border: 5px solid darkslategray;
     width: auto;
     height: 300px;
-    border-radius: 20px;
+    border-radius: 5px;
 }

@@ -21,7 +21,7 @@ h1 {
 }
 
 div.gallery {
-    padding-top: 20%;
+    padding-top: 5%;
     width: 75%;
     height: auto;
     margin: auto;
@@ -30,6 +30,6 @@ div.gallery {
 img {
     padding: 10px;
     width: auto;
-    height: 400px;
+    height: 300px;
     border-radius: 20px;
 }

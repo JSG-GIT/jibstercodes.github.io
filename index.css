@@ -21,6 +21,7 @@ h1 {
 }
 
 div.gallery {
+    padding-top: 20%;
     width: 75%;
     height: auto;
     margin: auto;

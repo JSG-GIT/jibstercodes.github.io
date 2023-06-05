@@ -6,3 +6,12 @@ p {
     text-align: center;
     padding: 10px;
 }
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+}

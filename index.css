@@ -1,36 +1,43 @@
 body {
-    background-color:aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color:plum;
 }
 
 p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: medium;
+    font-size: normal;
     margin: auto;
-    width: 50%;
-    text-align: center;
-    padding: 10px;
+    padding: 0.2vw;
 }
 
 h1 {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: larger;
+    font-size: large;
     margin: auto;
-    width: 50%;
+    padding: 0.4vw;
+}
+
+div.head {
     text-align: center;
-    padding: 10px;
+    width: 80%;
+    left: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 div.gallery {
-    padding-top: 5%;
-    width: 75%;
-    height: auto;
-    margin: auto;
+    width: 80%;
+    max-height: 70%;
+    padding-top: 3%;
+    left: 10%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
     text-align: center;
 }
 
 img {
-    border: 2px solid darkslategray;
-    width: auto;
-    height: 300px;
-    border-radius: 5px;
+    min-width: 0;
+    margin: 1%;
+    border-radius: 2%;
+    position: relative;
 }
